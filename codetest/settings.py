@@ -77,8 +77,10 @@ WSGI_APPLICATION = 'codetest.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ngoproject',
+        'USER': 'root',
+        'PASSWORD': 'password',
     }
 }
 
