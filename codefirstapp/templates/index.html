@@ -6,5 +6,9 @@
 </head>
 <body>
 <h1>First request of django app for html!!</h1>
+{% for prod in product_list %}
+{{ prod.product_name }}
+{{ prod.product_desc }}
+{% endfor %}
 </body>
 </html>
