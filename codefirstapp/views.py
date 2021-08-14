@@ -8,7 +8,11 @@ from codefirstapp import forms
 
 def test(request):
     # Product.objects.create(product_name='Wheel Chair', product_desc='used for accessbvility patient')
-    # product_list =Product.objects.all()
+    product_list1 =Product.objects.filter(id__gt =4)
+    product_list2 = Product.objects.filter(id__lt=4)
+    product_list3 = product_list1.union(product_list2)
+    print(product_list3.query)
+
     form = forms.ProductForm()
     if request.method == 'POST':
         form = forms.ProductForm(request.POST)
