@@ -13,6 +13,8 @@ from codefirstapp.serializer import ProductSerializer
 
 
 def test(request):
+    print("in between pre ad post processing")
+    print(10/0)
     # Product.objects.create(product_name='Wheel Chair', product_desc='used for accessbvility patient')
     product_list1 =Product.objects.filter(id__gt =4)
     product_list2 = Product.objects.filter(id__lt=4)

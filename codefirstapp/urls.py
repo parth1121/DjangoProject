@@ -13,15 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path
+from django.urls import path, include
 from rest_framework import routers
 
 from codefirstapp import views as v1
 
+router = routers.DefaultRouter()
+router.register('product', v1.ProductView)
 
 urlpatterns = [
     path('test/', v1.test),
     path('cookie/', v1.testCookie),
     path('productList/', v1.ProductList.as_view()),
-    path('api/', v1.ProductView.as_view({'get':'list'})),
+    path('api/', include(router.urls)),
 ]
