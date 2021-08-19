@@ -14,9 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
+from rest_framework import routers
 
 from codefirstapp import views as v1
 
+
 urlpatterns = [
     path('test/', v1.test),
+    path('cookie/', v1.testCookie),
+    path('productList/', v1.ProductList.as_view()),
+    path('api/', v1.ProductView.as_view({'get':'list'})),
 ]
